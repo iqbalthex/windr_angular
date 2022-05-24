@@ -1,0 +1,45 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: [
+		'./app.component.css',
+		'../../../../../bs/css/bootstrap.min.css'
+	]
+})
+
+export class AppComponent {
+  title = 'windrose';
+
+	currYear: number = 2020;
+	currMonth: string = "Mei";
+	years: number[] = [2015,2016,2017,2018,2019,2020,2021,2022];
+	months: string[] = ['Januari','Februari','Maret','April','Mei','Juni',
+		'Juli','Agustus','September','Oktober','November','Desember'];
+	daysOfMonth: {[key: string]: any} = { "Januari": 31, "Maret": 31,
+		"April": 30, "Mei": 31, "Juni": 30, "Juli": 31, "Agustus": 31,
+		"September": 30, "Oktober": 31, "November": 30, "Desember": 31,
+		"Februari": (year: number) => year % 4 == 0 ? 29 : 28
+	};
+	daysInMonth: {[key: string]: number[]} = {
+		"2020-Februari": [1,2,3],
+		"2021-Februari": [1,2],
+		"2020-Maret": [1,2,3,4],
+		"2021-Maret": [1,2,3,4]
+	};
+	for (i=0;i<) // loop daysInMonth
+
+	setCurrYear = (year: number): void => {
+		this.currYear = year;
+		this.tgl = this.daysInMonth[this.currYear+'-'+this.currMonth];
+	}
+
+	setCurrMonth = (month: string): void => {
+		this.currMonth = month;
+		this.tgl = this.daysInMonth[this.currYear+'-'+this.currMonth];
+	}
+
+	tgl: number[] = this.daysInMonth[this.currYear+'-'+this.currMonth];
+
+}
