@@ -18,7 +18,7 @@
 		</ng-template>
 	</div>
 	<div>
-	<h4 class="text-center">{{ tgl }}, {{ currMonth }}, {{ currYear }}</h4>
+	<h4 class="text-center" (load)="tblLoad()">{{ currMonth }}, {{ currYear }}</h4>
 		<div style="width: 100%; overflow: scroll">
 			<div class="border d-flex">
 				<div style="width: 30%">
@@ -36,7 +36,7 @@
 								<p>{{ i }}</p>
 							</span>
 							<input class="text-center" type="number"
-								value="">
+								value="{{velData[currYear+'-'+currMonth][i-1]}}">
 							<input class="text-center" type="number"
 								value="">
 							<input type="checkbox">
